@@ -1,7 +1,6 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { useRecipes } from '../zustand/store';
 import RecipeCard from './RecipeCard';
-import RecipeDetails from './RecipeDetails';
 
 const RecipesItem = ({ item, isShow }) => {
   const { id, selected } = item;
@@ -27,11 +26,16 @@ const RecipesItem = ({ item, isShow }) => {
       onContextMenu={handleRightClick}
     >
       <RecipeCard item={item} isSelected={selected} />
-      {/* <RecipeDetails item={item} /> */}
     </li>
   );
 };
 
-// RecipesItem.propTypes = {};
+RecipesItem.propTypes = {
+  isShow: PropTypes.bool.isRequired,
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    selected: PropTypes.bool.isRequired,
+  }).isRequired,
+};
 
 export default RecipesItem;

@@ -52,6 +52,7 @@ const RecipesList = () => {
             </ul>
             <button
               type="button"
+              style={{ marginRight: 8 }}
               disabled={viewCount - SHOW_COUNT === 0}
               onClick={() => setViewCount(-1 * SHOW_COUNT)}
             >
